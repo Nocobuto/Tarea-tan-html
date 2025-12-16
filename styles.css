@@ -1,0 +1,170 @@
+/* =========================
+   Paleta de colores
+========================= */
+:root {
+  --primary: #2563eb;
+  --secondary: #1e293b;
+  --background: #f8fafc;
+  --text: #0f172a;
+  --muted: #64748b;
+  --card: #ffffff;
+}
+
+/* =========================
+   Reset
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   Estilos generales
+========================= */
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b, #2563eb);
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+
+/* =========================
+   Animación base (segura)
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   Contenedor principal
+========================= */
+.container {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: var(--card);
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+
+  /* Animación segura */
+  animation: fadeUp 0.8s ease-out;
+}
+
+/* =========================
+   Títulos
+========================= */
+h1 {
+  font-size: 2rem;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+}
+
+/* =========================
+   Imagen
+========================= */
+.profile-img {
+  display: block;
+  width: 160px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin: 1.5rem 0;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   Texto
+========================= */
+p {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* =========================
+   Listas
+========================= */
+.hobbies {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.hobbies li {
+  padding: 0.4rem 0;
+  font-weight: 500;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.hobbies li:hover {
+  transform: translateX(6px);
+  color: var(--primary);
+}
+
+.music-list {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+.music-list li {
+  margin-bottom: 0.5rem;
+}
+
+/* =========================
+   Enlaces con animación
+========================= */
+a {
+  position: relative;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background-color: var(--primary);
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 600px) {
+  .container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+  }
+}
